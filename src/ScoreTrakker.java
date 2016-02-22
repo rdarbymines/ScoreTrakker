@@ -23,7 +23,7 @@ public class ScoreTrakker {
 			 
 	}
 	
-	public void loadDataFromFile(String fileName) throws FileNotFoundException{
+	public void loadDataFromFile(String fileName) throws Exception, FileNotFoundException{
 		String line = null;
 		try { 
 			FileReader reader = new FileReader(fileName);
@@ -39,6 +39,7 @@ public class ScoreTrakker {
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());
+			//makes more sense to put here 
 		}
 	}
 	
@@ -73,6 +74,9 @@ public class ScoreTrakker {
 			} 
 			catch (IOException e) {			
 				e.printStackTrace();
+			}
+			catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 		}
 		
